@@ -49,6 +49,7 @@ public class shrek : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         logic.gameOver();
         shrekalive = false;
+        float high score = score;
     }    
 }
 
