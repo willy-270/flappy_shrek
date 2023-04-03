@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class titlescreen : MonoBehaviour
 {
+
+    public logic logic;
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 0;
+        logic.displayHighScore();
     }
 
     // Update is called once per frame

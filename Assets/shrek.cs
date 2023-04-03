@@ -23,13 +23,16 @@ public class shrek : MonoBehaviour
     {
         logic = GameObject.FindGameObjectWithTag("logic").GetComponent<logic>();
 
-        source.PlayOneShot(clip3);
-
+        source3.PlayOneShot(clip3);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(source3.isPlaying == false && shrekalive == true) {
+            source3.PlayOneShot(clip3);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) == true || 
             Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) {
                 if(shrekalive) {
@@ -49,7 +52,6 @@ public class shrek : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         logic.gameOver();
         shrekalive = false;
-        float high score = score;
     }    
 }
 
