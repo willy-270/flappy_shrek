@@ -6,6 +6,9 @@ public class titlescreen : MonoBehaviour
 {
 
     public logic logic;
+    public GameObject score;
+    public GameObject buttons;
+    public GameObject pause;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +19,15 @@ public class titlescreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) ||
-            Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) {
-                
-            Time.timeScale = 1;
-            Destroy(gameObject);
-        }
+        
     }
+    public void startgame() {
+                    
+        Time.timeScale = 1;
+        score.SetActive(true);
+        pause.SetActive(true);
+        Destroy(gameObject);
+        Destroy(buttons);
+    }
+
 }

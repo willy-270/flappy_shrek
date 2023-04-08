@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 9ae68db65cb7d77448c4b95d27bd977b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Super Mario 256
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1a555633ef676624a99c9c16ac17f114, type: 3}
+  - {fileID: 12800000, guid: d50761c69553ceb4a8f3badcc680cc95, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

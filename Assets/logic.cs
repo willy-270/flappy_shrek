@@ -7,6 +7,8 @@ using TMPro;
 
 public class logic : MonoBehaviour
 {
+    public GameObject jumpButton;
+    public GameObject pauseBtn;
     public int score;
     public static float highScore = 0;
     public TMP_Text scoreText;
@@ -24,16 +26,20 @@ public class logic : MonoBehaviour
     
     public void gameOver() {
         gameOverScreen.SetActive(true);
+        pauseBtn.SetActive(false);
+        Destroy(jumpButton);
         if(score > PlayerPrefs.GetFloat("highScore", 0)) {
+
             highScore = score;
 
             PlayerPrefs.SetFloat("highScore", highScore);
 
-            scoreText.text = score.ToString() + "<size=40%><i><cspace=-0.1em> new high-score!";
+            scoreText.text = score.ToString() + "<size=30%><i><cspace=-0.1em> new high-score!";
         }
     }
 
     public void displayHighScore() {
         highScoreText.text = "your high score: " + PlayerPrefs.GetFloat("highScore", 0).ToString();
     }
+
 }
