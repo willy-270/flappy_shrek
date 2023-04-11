@@ -1386,6 +1386,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2017237640}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: LoadInterAd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2124333268}
         m_TargetAssemblyTypeName: logic, Assembly-CSharp
         m_MethodName: restartGame
@@ -2776,6 +2788,7 @@ GameObject:
   - component: {fileID: 2017237639}
   - component: {fileID: 2017237638}
   - component: {fileID: 2017237637}
+  - component: {fileID: 2017237640}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2871,6 +2884,30 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2017237640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017237635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8af685b155a8b24a8b39b34d58d1e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _AndroidGameId: 5241637
+  _iOSGameId: 5241636
+  _AndroidInterId: Interstitial_Android
+  _iOSInterId: Interstitial_iOS
+  _AndroidRewardedId: Rewarded_Android
+  _iOSRewardedId: Rewarded_iOS
+  _AndroidBannerId: Banner_Android
+  _iOSBannerId: Banner_iOS
+  _testMode: 1
+  adShowing: 0
+  interAdBuffer: 0
+  iconbuttonmanager: {fileID: 0}
 --- !u!1 &2027062971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3057,6 +3094,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: garage
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2017237640}
+        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
+        m_MethodName: PlayAd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2061707464
@@ -3275,6 +3324,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 08c36d9a5deb74b499ba4749c8f6fb8a, type: 3}
     - target: {fileID: 9188324786680921486, guid: 5f96d4f34e23b59428b3573ec347d2f9, type: 3}
+      propertyPath: logic
+      value: 
+      objectReference: {fileID: 2124333268}
+    - target: {fileID: 9188324786680921486, guid: 5f96d4f34e23b59428b3573ec347d2f9, type: 3}
       propertyPath: music
       value: 
       objectReference: {fileID: 8771387935157008833, guid: 911518adceda21d4693ad7cc75ba298a, type: 2}
@@ -3282,6 +3335,14 @@ PrefabInstance:
       propertyPath: pipeS
       value: 
       objectReference: {fileID: 42638054}
+    - target: {fileID: 9188324786680921486, guid: 5f96d4f34e23b59428b3573ec347d2f9, type: 3}
+      propertyPath: adsManager
+      value: 
+      objectReference: {fileID: 2017237640}
+    - target: {fileID: 9188324786680921486, guid: 5f96d4f34e23b59428b3573ec347d2f9, type: 3}
+      propertyPath: explodable
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9188324786680921486, guid: 5f96d4f34e23b59428b3573ec347d2f9, type: 3}
       propertyPath: pussSprite
       value: 
@@ -3367,5 +3428,13 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5262430551230432479, guid: 9cde5f6298c5c984d98274697bb4cffc, type: 3}
+      propertyPath: logic
+      value: 
+      objectReference: {fileID: 2124333268}
+    - target: {fileID: 5262430551230432479, guid: 9cde5f6298c5c984d98274697bb4cffc, type: 3}
+      propertyPath: shrek
+      value: 
+      objectReference: {fileID: 215174547}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cde5f6298c5c984d98274697bb4cffc, type: 3}

@@ -11,9 +11,11 @@ public class lb : MonoBehaviour
     private List<TextMeshProUGUI> scores;
 
     private string publicLeaberbBoardKey = "7a3eff826e8daf85f286c215e0a1c61410484ec41878c678883ea33c43fc6839";
+    string yourUsername;
 
     private void Start() {
         getLb();
+        yourUsername = PlayerPrefs.GetString("username");
     }
 
     public void getLb(){
@@ -24,6 +26,13 @@ public class lb : MonoBehaviour
                 scores[i].text = msg[i].Score.ToString();
             }
         }));
+        foreach(TextMeshProUGUI item in names) {
+            if(item.Equals(yourUsername)) {
+                int top10 = 1;
+
+                PlayerPrefs.SetInt("top10", top10);
+            }
+        }
     }
 
     public void SetLbEntry(string username, int score) {

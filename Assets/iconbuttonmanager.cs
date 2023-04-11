@@ -9,15 +9,18 @@ public class iconbuttonmanager : MonoBehaviour
     public UnityEngine.UI.Button donkeybtn;
     public UnityEngine.UI.Button pussbtn;
 
-    void Start()
-    {
-        if(PlayerPrefs.GetString("currentIcon") == "shrek") {
+    public string currentIcon;
+
+    public void Start() {
+        string currentIcon = (PlayerPrefs.GetString("currentIcon", "shrek"));
+
+        if (currentIcon == "shrek") {
             shrekbtn.Select();
         }
-        if(PlayerPrefs.GetString("currentIcon") == "donkey") {
+        if (currentIcon == "donkey") {
             donkeybtn.Select();
         }
-        if(PlayerPrefs.GetString("currentIcon") == "puss") {
+        if (currentIcon == "puss") {
             pussbtn.Select();
         }
     }

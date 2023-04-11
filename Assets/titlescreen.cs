@@ -16,18 +16,14 @@ public class titlescreen : MonoBehaviour
         logic.displayHighScore();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void startgame() {
-                    
+    public void startgame()
+    {            
         Time.timeScale = 1;
         score.SetActive(true);
         pause.SetActive(true);
         Destroy(gameObject);
         Destroy(buttons);
+        Debug.Log("start game");
     }
 
 }

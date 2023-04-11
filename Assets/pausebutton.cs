@@ -43,6 +43,7 @@ public class pausebutton : MonoBehaviour
         
         Debug.Log("paused");
     }
+    
     public void unPauseGame() {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);

@@ -9,6 +9,7 @@ public class shrek : MonoBehaviour
     public pipe pipeS;
     public movingpipe movingPipeS;
     public titlescreen titlescreen;
+    public AdsManager adsManager;
     public Sprite shrekSprite;
     public Sprite donkeySprite;
     public Sprite pussSprite;
@@ -17,7 +18,6 @@ public class shrek : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public float jumpstrength;
     public logic logic;
-    public Explodable explodable;
     public bool shrekalive = true;
     public int lifeTimeJumps = 0;
     public int lifeTimeDeaths = 0;
@@ -65,9 +65,7 @@ public class shrek : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
-        if(Input.GetKeyDown("space")) {
+        if(Input.GetKeyDown("space") && !adsManager.adShowing) {
             jump();
             if(j == false) {
                 titlescreen.startgame();
@@ -75,14 +73,13 @@ public class shrek : MonoBehaviour
             }
         }
 
-
         if(shrekalive == false && i == false) {
             PlayerPrefs.SetInt("lifeTimeJumps", lifeTimeJumps);
             lifeTimeDeaths += 1;
             PlayerPrefs.SetInt("lifeTimeDeaths", lifeTimeDeaths);
 
             myRigidbody.velocity = Vector2.up * Random.Range(-200, 200) +  
-                                    Vector2.right * Random.Range(-200, 200);
+                                   Vector2.right * Random.Range(-200, 200);
     
             myRigidbody.angularVelocity = 360;
             
@@ -94,8 +91,6 @@ public class shrek : MonoBehaviour
 
             pipeS.moveSpeed = 6f;
             movingPipeS.moveSpeed = 6f;
-
-            
         }
 
          if(transform.position.y < -12) {
@@ -105,14 +100,14 @@ public class shrek : MonoBehaviour
     }
     public void jump() {
 
-            if(shrekalive && !pausebutton.isPaused) {
-                
-            myRigidbody.velocity = Vector2.up * jumpstrength;
-            myRigidbody.angularVelocity = 180;
-            lifeTimeJumps += 1;
-            source.PlayOneShot(clip);
-            }
+        if(shrekalive && !pausebutton.isPaused) {
+            
+        myRigidbody.velocity = Vector2.up * jumpstrength;
+        myRigidbody.angularVelocity = 180;
+        lifeTimeJumps += 1;
+        source.PlayOneShot(clip);
         }
+    }
     private void OnCollisionEnter2D(Collision2D other) {
         logic.gameOver();
         shrekalive = false;
