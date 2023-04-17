@@ -6,6 +6,8 @@ using UnityEngine.Audio;
 
 public class shrek : MonoBehaviour
 {
+    [SerializeField] ParticleSystem collectParticle = null;
+
     public pipe pipeS;
     public movingpipe movingPipeS;
     public titlescreen titlescreen;
@@ -13,6 +15,7 @@ public class shrek : MonoBehaviour
     public Sprite shrekSprite;
     public Sprite donkeySprite;
     public Sprite pussSprite;
+    public Sprite kingSprite;
     bool i = false;
     bool j = false;
     public Rigidbody2D myRigidbody;
@@ -57,9 +60,12 @@ public class shrek : MonoBehaviour
         if(LoadedCurrentIcon == "puss") {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = pussSprite;
         }
+        if(LoadedCurrentIcon == "kingShrek") {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = kingSprite;
+        }
 
-        pipeS.moveSpeed = 6f;
-        movingPipeS.moveSpeed = 6f;
+        pipeS.moveSpeed = 7f;
+        movingPipeS.moveSpeed = 7f;
     }
 
     // Update is called once per frame
@@ -106,11 +112,17 @@ public class shrek : MonoBehaviour
         myRigidbody.angularVelocity = 180;
         lifeTimeJumps += 1;
         source.PlayOneShot(clip);
+
+        Collect();
         }
     }
     private void OnCollisionEnter2D(Collision2D other) {
         logic.gameOver();
         shrekalive = false;
+
+    }
+    public void Collect() {
+        collectParticle.Play();
     }
 }
 

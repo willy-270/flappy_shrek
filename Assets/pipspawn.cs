@@ -15,12 +15,10 @@ public class pipspawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pipeS.moveSpeed = 6f;
-        movingPipeS.moveSpeed = 6;
+        pipeS.moveSpeed = 7f;
+        movingPipeS.moveSpeed = 7;
 
         spawnpipe();
-        
-        
     }
 
     // Update is called once per frame
@@ -36,8 +34,8 @@ public class pipspawn : MonoBehaviour
             if(i == 5) {
                 spawnMovingPipe();
                 i = 0;
-                pipeS.moveSpeed += 0.1f;
-                movingPipeS.moveSpeed += 0.1f;
+                pipeS.moveSpeed += 0.02f;
+                movingPipeS.moveSpeed += 0.02f;
                 timer = 0;
                 Debug.Log("spawned moving");
             }
@@ -45,8 +43,8 @@ public class pipspawn : MonoBehaviour
             {
                 spawnpipe();
                 i += 1;
-                pipeS.moveSpeed += 0.1f;
-                movingPipeS.moveSpeed += 0.1f;
+                pipeS.moveSpeed += 0.02f;
+                movingPipeS.moveSpeed += 0.02f;
                 timer = 0;
                 Debug.Log("spawned normal");
             }
