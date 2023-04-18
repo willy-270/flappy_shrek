@@ -50,9 +50,9 @@ public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnity
             _RewardedId = _AndroidRewardedId;
             _BannerId = _AndroidBannerId;
     #elif UNITY_EDITOR
-            _gameId = _androidGameId;
+            _gameId = _AndroidGameId;
             _InterId = _AndroidInterId;
-            _RewardedId = _AndroidSRewardedId;
+            _RewardedId = _AndroidRewardedId;
             _BannerId = _AndroidBannerId; //Only for testing the functionality in the Editor
     #endif
         if (!Advertisement.isInitialized && Advertisement.isSupported)

@@ -11,18 +11,28 @@ public class iconmanager : MonoBehaviour {
 
     public TextMeshProUGUI donkeytxt;
     public TextMeshProUGUI pusstxt;
+    public TextMeshProUGUI kingtxt;
 
     public GameObject donkeytxtObj;
     public GameObject pusstxtObj;
+    public GameObject kingtxtObj;
+
+    public UnityEngine.UI.Button shrekbtn;
 
     public int adsToWatchPuss = 2;
     public int adsToWatchDonkey = 2;
+
+    public int top10 = 0;
 
     public string currentIcon;
 
     void Start() {
         adsToWatchPuss = PlayerPrefs.GetInt("adsToWatchPuss", 2);
         adsToWatchDonkey = PlayerPrefs.GetInt("adsToWatchDonkey", 2);
+
+        top10 = PlayerPrefs.GetInt("top10", 0);
+
+        kingShrekCheck();
     }
     
     public void Update() {
@@ -49,6 +59,11 @@ public class iconmanager : MonoBehaviour {
             currentIcon = "puss";
             PlayerPrefs.SetString("currentIcon", currentIcon);
         }
+
+        if(IconID == 4 && top10 == 1) {
+            currentIcon = "kingShrek";
+            PlayerPrefs.SetString("currentIcon", currentIcon);
+        }
     }
 
     public void adStuffPuss() {
@@ -63,6 +78,7 @@ public class iconmanager : MonoBehaviour {
             Destroy(pusstxtObj);
         }
     }
+
     public void adStuffDonkey() {
         if (adsToWatchDonkey > 0) {
             AdsManager.LoadRewardedAd();
@@ -73,6 +89,12 @@ public class iconmanager : MonoBehaviour {
             donkeytxt.text = "Watch\n" + adsToWatchDonkey.ToString() + "\nMore Ads To Unlock";
         } else {
             Destroy(donkeytxtObj);
+        }
+    }
+
+    public void kingShrekCheck() {
+        if (top10 == 1) {
+            Destroy(kingtxtObj);
         }
     }
 }

@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -149,10 +149,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c36baabb486e04da2221a99b2585fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pipeS: {fileID: 0}
+  movingPipeS: {fileID: 0}
+  titlescreen: {fileID: 0}
+  adsManager: {fileID: 0}
+  shrekSprite: {fileID: 0}
+  donkeySprite: {fileID: 0}
+  pussSprite: {fileID: 0}
   myRigidbody: {fileID: 9188324786680921484}
   jumpstrength: 15
   logic: {fileID: 0}
   shrekalive: 1
+  lifeTimeJumps: 0
+  lifeTimeDeaths: 0
+  music: {fileID: 0}
+  sfx: {fileID: 0}
   source: {fileID: 9188324786680921481}
   clip: {fileID: 8300000, guid: 6870c9a18694a6547905b65cbb1c230b, type: 3}
   source2: {fileID: 9188324786680921481}

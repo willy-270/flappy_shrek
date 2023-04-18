@@ -6,7 +6,7 @@ public class movingpipe : MonoBehaviour
 {
     public float deadZone = -40;
     public float moveSpeed = 6;
-    float yMoveSpeed = 5;
+    float yMoveSpeed = 3.5f;
     public string currentDir;
     bool i = false;
 

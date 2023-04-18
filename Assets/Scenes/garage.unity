@@ -1357,10 +1357,14 @@ MonoBehaviour:
   AdsManager: {fileID: 614600024}
   donkeytxt: {fileID: 1859634164}
   pusstxt: {fileID: 2099970512}
+  kingtxt: {fileID: 1244521324}
   donkeytxtObj: {fileID: 1859634161}
   pusstxtObj: {fileID: 2099970511}
+  kingtxtObj: {fileID: 1244521322}
+  shrekbtn: {fileID: 0}
   adsToWatchPuss: 2
   adsToWatchDonkey: 2
+  top10: 0
   currentIcon: 
 --- !u!4 &1009080141
 Transform:
@@ -1532,24 +1536,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1009080140}
         m_TargetAssemblyTypeName: iconmanager, Assembly-CSharp
-        m_MethodName: iconSelect
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: shrek
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1009080140}
-        m_TargetAssemblyTypeName: iconmanager, Assembly-CSharp
-        m_MethodName: adStuffDonkey
+        m_MethodName: kingShrekCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1009080140}
+        m_TargetAssemblyTypeName: iconmanager, Assembly-CSharp
+        m_MethodName: iconSelect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1788,8 +1792,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.5958, y: -0.0018323}
-  m_SizeDelta: {x: 172.4716, y: 114.66}
+  m_AnchoredPosition: {x: 1.3828, y: -0.0020862}
+  m_SizeDelta: {x: 139.4947, y: 114.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1244521324
 MonoBehaviour:
@@ -1815,7 +1819,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1838,8 +1843,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.3
-  m_fontSizeBase: 20.3
+  m_fontSize: 18.9
+  m_fontSizeBase: 18.9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2026,7 +2031,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fc3053be0ec495348b8af3fe874b6d5b, type: 2}
   m_sharedMaterial: {fileID: -1663096835082530688, guid: fc3053be0ec495348b8af3fe874b6d5b, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: -1663096835082530688, guid: fc3053be0ec495348b8af3fe874b6d5b, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -2338,7 +2344,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -2521,7 +2528,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:

@@ -5,6 +5,8 @@ using Dan.Main;
 
 public class lb : MonoBehaviour
 {
+    public int top10;
+
     [SerializeField]
     private List<TextMeshProUGUI> names;
     [SerializeField]
@@ -16,6 +18,8 @@ public class lb : MonoBehaviour
     private void Start() {
         getLb();
         yourUsername = PlayerPrefs.GetString("username");
+
+        Debug.Log(yourUsername);
     }
 
     public void getLb(){
@@ -24,15 +28,13 @@ public class lb : MonoBehaviour
             for(int i = 0; i < loopLength; ++i) {
                 names[i].text = msg[i].Username;
                 scores[i].text = msg[i].Score.ToString();
-            }
-        }));
-        foreach(TextMeshProUGUI item in names) {
-            if(item.Equals(yourUsername)) {
-                int top10 = 1;
 
-                PlayerPrefs.SetInt("top10", top10);
-            }
-        }
+                if(names[i].text == yourUsername) {
+                    top10 = 1;
+                    PlayerPrefs.SetInt("top10", top10);
+                }
+            }   
+        }));
     }
 
     public void SetLbEntry(string username, int score) {
@@ -40,6 +42,7 @@ public class lb : MonoBehaviour
             score, ((msg) => {
             getLb();
 
+            yourUsername = username;
             PlayerPrefs.SetString("username", username);
         }));
     }
