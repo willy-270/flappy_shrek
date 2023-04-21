@@ -7,8 +7,6 @@ using TMPro;
 
 public class iconmanager : MonoBehaviour {
 
-    public AdsManager AdsManager;
-
     public TextMeshProUGUI donkeytxt;
     public TextMeshProUGUI pusstxt;
     public TextMeshProUGUI kingtxt;
@@ -23,6 +21,7 @@ public class iconmanager : MonoBehaviour {
     public int adsToWatchDonkey = 2;
 
     public int top10 = 0;
+    public float highScore;
 
     public string currentIcon;
 
@@ -32,14 +31,16 @@ public class iconmanager : MonoBehaviour {
 
         top10 = PlayerPrefs.GetInt("top10", 0);
 
+        highScore = PlayerPrefs.GetFloat("highScore");
+
         kingShrekCheck();
     }
     
     public void Update() {
-        if (adsToWatchDonkey == 0) {
+        if (highScore >= 50) {
             Destroy(donkeytxtObj);
         }
-        if (adsToWatchPuss == 0) {
+        if (highScore >= 100) {
             Destroy(pusstxtObj);
         }
     }
@@ -50,12 +51,12 @@ public class iconmanager : MonoBehaviour {
             PlayerPrefs.SetString("currentIcon", currentIcon);
         } 
 
-        if(IconID == 2 && adsToWatchDonkey == 0) {
+        if(IconID == 2 && highScore >= 50) {
             currentIcon = "donkey";
             PlayerPrefs.SetString("currentIcon", currentIcon);
         } 
 
-        if(IconID == 3 && adsToWatchPuss == 0) {
+        if(IconID == 3 && highScore >= 100) {
             currentIcon = "puss";
             PlayerPrefs.SetString("currentIcon", currentIcon);
         }
@@ -63,32 +64,6 @@ public class iconmanager : MonoBehaviour {
         if(IconID == 4 && top10 == 1) {
             currentIcon = "kingShrek";
             PlayerPrefs.SetString("currentIcon", currentIcon);
-        }
-    }
-
-    public void adStuffPuss() {
-        if (adsToWatchPuss > 0) {
-            AdsManager.LoadRewardedAd();
-            adsToWatchPuss -= 1;
-
-            PlayerPrefs.SetInt("adsToWatchPuss", adsToWatchPuss);
-
-            pusstxt.text = "Watch\n" + adsToWatchPuss.ToString() + "\nMore Ads To Unlock";
-        } else {
-            Destroy(pusstxtObj);
-        }
-    }
-
-    public void adStuffDonkey() {
-        if (adsToWatchDonkey > 0) {
-            AdsManager.LoadRewardedAd();
-            adsToWatchDonkey -= 1;
-
-            PlayerPrefs.SetInt("adsToWatchDonkey", adsToWatchDonkey);
-
-            donkeytxt.text = "Watch\n" + adsToWatchDonkey.ToString() + "\nMore Ads To Unlock";
-        } else {
-            Destroy(donkeytxtObj);
         }
     }
 

@@ -385,11 +385,11 @@ RectTransform:
   - {fileID: 1807116189}
   - {fileID: 2099970514}
   m_Father: {fileID: 614600023}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -235.3, y: -256}
+  m_AnchoredPosition: {x: 208, y: -256}
   m_SizeDelta: {x: 119.5523, y: 114.6642}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &424213602
@@ -532,11 +532,11 @@ RectTransform:
   - {fileID: 566795340}
   - {fileID: 1859634162}
   m_Father: {fileID: 614600023}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 222.3, y: -256}
+  m_AnchoredPosition: {x: -236, y: -256}
   m_SizeDelta: {x: 119.5523, y: 114.6642}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &464085063
@@ -733,7 +733,6 @@ GameObject:
   - component: {fileID: 614600022}
   - component: {fileID: 614600021}
   - component: {fileID: 614600020}
-  - component: {fileID: 614600024}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -816,8 +815,8 @@ RectTransform:
   m_Children:
   - {fileID: 804611405}
   - {fileID: 638590306}
-  - {fileID: 424213601}
   - {fileID: 464085062}
+  - {fileID: 424213601}
   - {fileID: 1056433781}
   - {fileID: 772656575}
   - {fileID: 1305559057}
@@ -829,30 +828,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &614600024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614600019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8af685b155a8b24a8b39b34d58d1e9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _AndroidGameId: 5241637
-  _iOSGameId: 5241636
-  _AndroidInterId: Interstitial_Android
-  _iOSInterId: Interstitial_iOS
-  _AndroidRewardedId: Rewarded_Android
-  _iOSRewardedId: Rewarded_iOS
-  _AndroidBannerId: Banner_Android
-  _iOSBannerId: Banner_iOS
-  _testMode: 1
-  adShowing: 0
-  interAdBuffer: 0
-  iconbuttonmanager: {fileID: 1792928588}
 --- !u!1 &638590305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee27e25883c91e54ea9cee70ad1adf5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AdsManager: {fileID: 614600024}
   donkeytxt: {fileID: 1859634164}
   pusstxt: {fileID: 2099970512}
   kingtxt: {fileID: 1244521324}
@@ -1365,6 +1339,7 @@ MonoBehaviour:
   adsToWatchPuss: 2
   adsToWatchDonkey: 2
   top10: 0
+  highScore: 0
   currentIcon: 
 --- !u!4 &1009080141
 Transform:
@@ -2340,7 +2315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Watch \n2 \nMore ads to Unlock"
+  m_text: Acheive a Highscore of 50 to Unlock
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2524,7 +2499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Watch \n2 \nMore ads to Unlock"
+  m_text: Acheive a Highscore of 100 to Unlock
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

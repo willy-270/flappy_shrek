@@ -11,7 +11,6 @@ public class shrek : MonoBehaviour
     public pipe pipeS;
     public movingpipe movingPipeS;
     public titlescreen titlescreen;
-    public AdsManager adsManager;
     public Sprite shrekSprite;
     public Sprite donkeySprite;
     public Sprite pussSprite;
@@ -71,11 +70,11 @@ public class shrek : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("space") && !adsManager.adShowing) {
+        if(Input.GetKeyDown("space")) {
             jump();
             if(j == false) {
-                titlescreen.startgame();
                 j = true;
+                titlescreen.startgame();
             }
         }
 
@@ -106,14 +105,13 @@ public class shrek : MonoBehaviour
     }
     public void jump() {
 
-        if(shrekalive && !pausebutton.isPaused) {
-            
-        myRigidbody.velocity = Vector2.up * jumpstrength;
-        myRigidbody.angularVelocity = 180;
-        lifeTimeJumps += 1;
-        source.PlayOneShot(clip);
+        if(shrekalive && !pausebutton.isPaused) {   
+            myRigidbody.velocity = Vector2.up * jumpstrength;
+            myRigidbody.angularVelocity = 180;
+            lifeTimeJumps += 1;
+            source.PlayOneShot(clip);
 
-        Collect();
+            Collect();
         }
     }
     private void OnCollisionEnter2D(Collision2D other) {

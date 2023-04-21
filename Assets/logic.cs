@@ -42,4 +42,8 @@ public class logic : MonoBehaviour
         highScoreText.text = "your high score: " + PlayerPrefs.GetFloat("highScore", 0).ToString();
     }
 
+    public void quitGame() {
+        Application.Quit();
+        Debug.Log("quit");
+    }
 }
